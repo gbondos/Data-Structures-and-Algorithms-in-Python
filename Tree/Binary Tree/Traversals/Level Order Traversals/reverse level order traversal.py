@@ -1,9 +1,3 @@
-
-Binary Trees are heirachical data structures.
-They are used to store data in heirarchy.
-whenever a tree is created, you must first make the node.
-
-Below is an example
 class Node:
     # constructor 
     def __init__(self, data):
@@ -12,6 +6,23 @@ class Node:
         self.right = None 
 
 #create a main function to create the tree 
+def reverse_level(root):
+    s = []
+    q = []
+    q.append(root)
+    while q:
+        current = q.pop(0)
+        s.append(current) 
+        if current.right:
+            q.append(current.right)
+        if current.left:
+            q.append(current.left)
+    
+    while s: 
+        current = s.pop()
+        print(current.data, end=" ")
+
+
 
 def main():
     root = Node(1)
@@ -30,6 +41,6 @@ def main():
     root.right.right.left = Node(14)
     root.right.right.right = Node(15)
 
-    # etc
+    reverse_level(root)
 
 main()
