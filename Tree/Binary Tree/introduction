@@ -1,9 +1,10 @@
-
+"""
 Binary Trees are heirachical data structures.
 They are used to store data in heirarchy.
 whenever a tree is created, you must first make the node.
 
-Below is an example
+Below is an example"""
+
 class Node:
     # constructor 
     def __init__(self, data):
